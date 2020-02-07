@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane prefHeight="614.0" prefWidth="1059.0" xmlns="http://javafx.com/javafx/8.0.172-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="view_controller.MainScreenController">
+   <children>
+      <TableView layoutX="14.0" layoutY="377.0" prefHeight="223.0" prefWidth="746.0">
+        <columns>
+          <TableColumn fx:id="tableColDate" prefWidth="106.0" text="Date" />
+          <TableColumn prefWidth="109.0" text="Pomodoro Spent" />
+            <TableColumn prefWidth="140.0" text="Task" />
+            <TableColumn prefWidth="176.0" text="Ultimate Goal" />
+        </columns>
+      </TableView>
+      <Label fx:id="prodTimerLabel" layoutX="14.0" layoutY="14.0" prefHeight="40.0" prefWidth="180.0" text="PRODUCTIVITY TIMER">
+         <font>
+            <Font size="16.0" />
+         </font>
+      </Label>
+      <Label fx:id="lblProdMins" layoutX="14.0" layoutY="60.0" prefHeight="56.0" prefWidth="65.0">
+         <font>
+            <Font size="24.0" />
+         </font>
+      </Label>
+      <Label fx:id="lblProdSeconds" layoutX="89.0" layoutY="60.0" prefHeight="56.0" prefWidth="65.0">
+         <font>
+            <Font size="24.0" />
+         </font>
+      </Label>
+      <Label fx:id="lblMins" layoutX="76.0" layoutY="60.0" prefHeight="56.0" prefWidth="4.0" text=":">
+         <font>
+            <Font size="24.0" />
+         </font>
+      </Label>
+      <ComboBox fx:id="cbProdMins" layoutX="7.0" layoutY="116.0" prefHeight="25.0" prefWidth="79.0" promptText="MINS" />
+      <ComboBox fx:id="cbProdSecs" layoutX="89.0" layoutY="116.0" prefHeight="25.0" prefWidth="79.0" promptText="SECS" />
+      <TextField fx:id="tfProdTask" layoutX="5.0" layoutY="157.0" prefHeight="25.0" prefWidth="168.0" promptText="What are you working on?" />
+      <TextField fx:id="tfProdGoal" layoutX="5.0" layoutY="190.0" prefHeight="25.0" prefWidth="168.0" promptText="What is the goal of this task?" />
+      <TextField fx:id="tfProdEstPom" layoutX="5.0" layoutY="225.0" prefHeight="25.0" prefWidth="168.0" promptText="Est Pomodoros To Complete" />
+      <Button fx:id="btnProdStart" layoutX="16.0" layoutY="261.0" mnemonicParsing="false" onAction="#handleNewProdTimer" prefHeight="25.0" prefWidth="147.0" text="New Productivity Timer" />
+      <Label fx:id="breakTimerLabel" layoutX="297.0" layoutY="14.0" prefHeight="40.0" prefWidth="180.0" text="BREAK TIMER">
+         <font>
+            <Font size="16.0" />
+         </font>
+      </Label>
+      <Label fx:id="lblBreakMins" layoutX="277.0" layoutY="60.0" prefHeight="56.0" prefWidth="65.0" text="Label">
+         <font>
+            <Font size="24.0" />
+         </font>
+      </Label>
+      <Label fx:id="lblMins" layoutX="339.0" layoutY="60.0" prefHeight="56.0" prefWidth="4.0" text=":">
+         <font>
+            <Font size="24.0" />
+         </font>
+      </Label>
+      <Label fx:id="lblBreakSeconds" layoutX="345.0" layoutY="60.0" prefHeight="56.0" prefWidth="65.0" text="Label">
+         <font>
+            <Font size="24.0" />
+         </font>
+      </Label>
+      <ComboBox fx:id="cbBreakMins" layoutX="263.0" layoutY="116.0" prefHeight="25.0" prefWidth="79.0" promptText="MINS" />
+      <ComboBox fx:id="cbBreakSecs" layoutX="348.0" layoutY="116.0" prefHeight="25.0" prefWidth="79.0" promptText="SECS" />
+      <TextField fx:id="tfBreak" layoutX="258.0" layoutY="157.0" prefHeight="25.0" prefWidth="168.0" promptText="What will you do on break?" />
+      <Button fx:id="btnProdStart" layoutX="276.0" layoutY="203.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="139.0" text="New Break Timer" />
+      <Button layoutX="63.0" layoutY="295.0" mnemonicParsing="false" onAction="#startNewProdTimer" text="Start" />
+   </children>
+</AnchorPane>
