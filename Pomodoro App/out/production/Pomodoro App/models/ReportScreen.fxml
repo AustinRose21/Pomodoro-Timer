@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8.0.172-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="view_controller.ReportScreenController">
+   <children>
+      <TableView fx:id="tvTimerDisplay" prefHeight="223.0" prefWidth="1093.0">
+         <columns>
+            <TableColumn fx:id="tableColDate" prefWidth="106.0" text="Date" />
+            <TableColumn fx:id="tvColPomoSpent" prefWidth="109.0" text="Pomodoro Spent" />
+            <TableColumn fx:id="tvColTask" prefWidth="140.0" text="Task" />
+            <TableColumn fx:id="tvColGoal" prefWidth="176.0" text="Ultimate Goal" />
+         </columns>
+      </TableView>
+      <Button layoutX="482.0" layoutY="293.0" mnemonicParsing="false" onAction="#handleGenerateReport" text="Generate Report" />
+      <Label layoutX="330.0" layoutY="223.0" prefHeight="35.0" prefWidth="539.0" text="View all days where at least x pomodoro were spent on task">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </Label>
+      <Label layoutX="432.0" layoutY="258.0" prefHeight="35.0" prefWidth="27.0" text="X = " />
+      <TextField fx:id="tfReport" layoutX="459.0" layoutY="263.0" />
+      <Button layoutX="939.0" layoutY="343.0" mnemonicParsing="false" onAction="#handleBackButton" prefHeight="35.0" prefWidth="96.0" text="Back" />
+   </children>
+</AnchorPane>

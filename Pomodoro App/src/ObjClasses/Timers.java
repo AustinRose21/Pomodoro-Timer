@@ -7,15 +7,15 @@ import java.util.Date;
 public class Timers {
 
 
-    //private int timerId;
+
     private int startMinute;
     private int startSecond;
-    private LocalDate startDate;
+    private String startDate;
     private Timestamp endTimeStamp;
 
 
     //full constructor
-    public Timers(int startMinute, int startSecond, LocalDate startDate) {
+    public Timers(int startMinute, int startSecond, String startDate) {
         this.startMinute = startMinute;
         this.startSecond = startSecond;
         this.startDate = startDate;
@@ -36,7 +36,7 @@ public class Timers {
         this.startSecond = startSecond;
     }
 
-    public void setStartDate(LocalDate startDate) {
+    public void setStartDate(String startDate) {
         this.startDate = startDate;
     }
 
@@ -53,7 +53,7 @@ public class Timers {
         return startSecond;
     }
 
-    public LocalDate getStartDate() {
+    public String getStartDate() {
         return startDate;
     }
 

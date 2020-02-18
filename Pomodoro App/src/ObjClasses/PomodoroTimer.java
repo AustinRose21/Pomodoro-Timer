@@ -1,18 +1,18 @@
 package ObjClasses;
 
 import java.sql.Timestamp;
-import java.time.LocalDate;
-import java.util.Date;
+
 
 public class PomodoroTimer extends Timers {
 
     private String taskInWork;
     private String ultimateGoal;
     private int estPomoToday;
+    private int pomodoroSpent;
 
 
     //full
-    public PomodoroTimer(int startMinute, int startSecond, LocalDate startDate, Timestamp endTimeStamp, String taskInWork, String ultimateGoal, int estPomoToday) {
+    public PomodoroTimer(int startMinute, int startSecond, String startDate, Timestamp endTimeStamp, String taskInWork, String ultimateGoal, int estPomoToday) {
         super(startMinute, startSecond, startDate);
         this.taskInWork = taskInWork;
         this.ultimateGoal = ultimateGoal;
@@ -20,9 +20,42 @@ public class PomodoroTimer extends Timers {
     }
 
     //partial constructor
-    public PomodoroTimer(String taskInWork, String ultimateGoal, int estPomoToday) {
+    public PomodoroTimer(int pomodoroSpent, String taskInWork, String ultimateGoal) {
+        this.pomodoroSpent = pomodoroSpent;
         this.taskInWork = taskInWork;
         this.ultimateGoal = ultimateGoal;
+    }
+
+
+    public String getTaskInWork() {
+        return taskInWork;
+    }
+
+    public void setTaskInWork(String taskInWork) {
+        this.taskInWork = taskInWork;
+    }
+
+    public String getUltimateGoal() {
+        return ultimateGoal;
+    }
+
+    public void setUltimateGoal(String ultimateGoal) {
+        this.ultimateGoal = ultimateGoal;
+    }
+
+    public int getEstPomoToday() {
+        return estPomoToday;
+    }
+
+    public void setEstPomoToday(int estPomoToday) {
         this.estPomoToday = estPomoToday;
+    }
+
+    public int getPomodoroSpent() {
+        return pomodoroSpent;
+    }
+
+    public void setPomodoroSpent(int pomodoroSpent) {
+        this.pomodoroSpent = pomodoroSpent;
     }
 }

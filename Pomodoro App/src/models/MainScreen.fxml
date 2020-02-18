@@ -1,7 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <?import javafx.scene.control.Button?>
-<?import javafx.scene.control.ComboBox?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.TableColumn?>
 <?import javafx.scene.control.TableView?>
@@ -11,12 +10,12 @@
 
 <AnchorPane prefHeight="614.0" prefWidth="1059.0" xmlns="http://javafx.com/javafx/8.0.172-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="view_controller.MainScreenController">
    <children>
-      <TableView layoutX="14.0" layoutY="377.0" prefHeight="223.0" prefWidth="746.0">
+      <TableView fx:id="tvTimerDisplay" layoutX="14.0" layoutY="377.0" prefHeight="223.0" prefWidth="746.0">
         <columns>
           <TableColumn fx:id="tableColDate" prefWidth="106.0" text="Date" />
-          <TableColumn prefWidth="109.0" text="Pomodoro Spent" />
-            <TableColumn prefWidth="140.0" text="Task" />
-            <TableColumn prefWidth="176.0" text="Ultimate Goal" />
+          <TableColumn fx:id="tvColPomoSpent" prefWidth="109.0" text="Pomodoro Spent" />
+            <TableColumn fx:id="tvColTask" prefWidth="140.0" text="Task" />
+            <TableColumn fx:id="tvColGoal" prefWidth="176.0" text="Ultimate Goal" />
         </columns>
       </TableView>
       <Label fx:id="prodTimerLabel" layoutX="14.0" layoutY="14.0" prefHeight="40.0" prefWidth="180.0" text="PRODUCTIVITY TIMER">
@@ -39,8 +38,6 @@
             <Font size="24.0" />
          </font>
       </Label>
-      <ComboBox fx:id="cbProdMins" layoutX="7.0" layoutY="116.0" prefHeight="25.0" prefWidth="79.0" promptText="MINS" />
-      <ComboBox fx:id="cbProdSecs" layoutX="89.0" layoutY="116.0" prefHeight="25.0" prefWidth="79.0" promptText="SECS" />
       <TextField fx:id="tfProdTask" layoutX="5.0" layoutY="157.0" prefHeight="25.0" prefWidth="168.0" promptText="What are you working on?" />
       <TextField fx:id="tfProdGoal" layoutX="5.0" layoutY="190.0" prefHeight="25.0" prefWidth="168.0" promptText="What is the goal of this task?" />
       <TextField fx:id="tfProdEstPom" layoutX="5.0" layoutY="225.0" prefHeight="25.0" prefWidth="168.0" promptText="Est Pomodoros To Complete" />
@@ -50,7 +47,7 @@
             <Font size="16.0" />
          </font>
       </Label>
-      <Label fx:id="lblBreakMins" layoutX="277.0" layoutY="60.0" prefHeight="56.0" prefWidth="65.0" text="Label">
+      <Label fx:id="lblBreakMins" layoutX="277.0" layoutY="60.0" prefHeight="56.0" prefWidth="65.0">
          <font>
             <Font size="24.0" />
          </font>
@@ -60,15 +57,29 @@
             <Font size="24.0" />
          </font>
       </Label>
-      <Label fx:id="lblBreakSeconds" layoutX="345.0" layoutY="60.0" prefHeight="56.0" prefWidth="65.0" text="Label">
+      <Label fx:id="lblBreakSeconds" layoutX="345.0" layoutY="60.0" prefHeight="56.0" prefWidth="65.0">
          <font>
             <Font size="24.0" />
          </font>
       </Label>
-      <ComboBox fx:id="cbBreakMins" layoutX="263.0" layoutY="116.0" prefHeight="25.0" prefWidth="79.0" promptText="MINS" />
-      <ComboBox fx:id="cbBreakSecs" layoutX="348.0" layoutY="116.0" prefHeight="25.0" prefWidth="79.0" promptText="SECS" />
       <TextField fx:id="tfBreak" layoutX="258.0" layoutY="157.0" prefHeight="25.0" prefWidth="168.0" promptText="What will you do on break?" />
-      <Button fx:id="btnProdStart" layoutX="276.0" layoutY="203.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="139.0" text="New Break Timer" />
+      <Button fx:id="btnProdStart" layoutX="276.0" layoutY="203.0" mnemonicParsing="false" onAction="#handleNewBreakTimer" prefHeight="25.0" prefWidth="139.0" text="New Break Timer" />
       <Button layoutX="63.0" layoutY="295.0" mnemonicParsing="false" onAction="#startNewProdTimer" text="Start" />
+      <Button fx:id="btnDelete" layoutX="319.0" layoutY="352.0" mnemonicParsing="false" onAction="#handleDelete" text="Delete" />
+      <Button layoutX="384.0" layoutY="352.0" mnemonicParsing="false" onAction="#handleUpdate" text="Update" />
+      <Label layoutX="892.0" layoutY="365.0" prefHeight="25.0" prefWidth="51.0" text="SEARCH">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </Label>
+      <Label layoutX="760.0" layoutY="415.0" prefHeight="25.0" prefWidth="97.0" text="Search By Task:" />
+      <TextField fx:id="tfSearchTask" layoutX="857.0" layoutY="415.0" />
+      <Button fx:id="searchButtonTask" layoutX="906.0" layoutY="440.0" mnemonicParsing="false" onAction="#handleSearchByTask" text="Search" />
+      <Label layoutX="760.0" layoutY="476.0" prefHeight="25.0" prefWidth="97.0" text="Search By Goal:" />
+      <TextField fx:id="tfSearchGoal" layoutX="858.0" layoutY="476.0" />
+      <Button fx:id="searchButtonGoal" layoutX="907.0" layoutY="501.0" mnemonicParsing="false" onAction="#handleSearchByGoal" text="Search" />
+      <Button fx:id="refreshButton" layoutX="875.0" layoutY="562.0" mnemonicParsing="false" onAction="#handleRefresh" prefHeight="25.0" prefWidth="114.0" text="REFRESH" />
+      <Button layoutX="319.0" layoutY="238.0" mnemonicParsing="false" onAction="#startNewBreakTimer" text="Start" />
+      <Button layoutX="668.0" layoutY="340.0" mnemonicParsing="false" onAction="#handleGoToReports" prefHeight="25.0" prefWidth="97.0" text="Go To Reports" />
    </children>
 </AnchorPane>
